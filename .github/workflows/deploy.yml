@@ -12,10 +12,11 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
-      - name: Set up Node.js
+      - name: Set up Node.js (use Node 20 for ESM plugin compatibility)
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          # @vitejs/plugin-react requires Node >= 20.19.0 (or >=22.12.0). Pin to a compatible 20.x
+          node-version: '20.19.0'
 
       - name: Install Dependencies & Build 🔧
         # We inject the backend URL into the frontend at build time using VITE_API_URL.
