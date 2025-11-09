@@ -18,10 +18,14 @@ jobs:
           node-version: '18'
 
       - name: Install Dependencies & Build 🔧
+        # We inject the backend URL into the frontend at build time using VITE_API_URL.
+        # Create a repository secret named RENDER_API_URL with your Render backend URL
+        # (for example: https://rpnpc-api.onrender.com/submit) in GitHub Settings -> Secrets -> Actions.
         run: |
           cd frontend
           npm install
-          npm run build
+          # Build with VITE_API_URL available at build-time so the compiled site calls your live API
+          VITE_API_URL=${{ secrets.RENDER_API_URL }} npm run build
 
       - name: Deploy 🚀
         uses: peaceiris/actions-gh-pages@v3
