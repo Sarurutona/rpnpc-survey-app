@@ -15,7 +15,7 @@ function App() {
 
   // IMPORTANT: Use Vite env var VITE_API_URL for deployed backend; fallback to localhost for local testing
   // To set the live URL in production, define VITE_API_URL in your deployment environment (e.g. Render or GH Actions build step)
-  const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/submit'; // For local testing
+  const API_URL = import.meta.env.VITE_API_URL || 'https://rpnpc-api.onrender.com'; // For local testing
 
     try {
       const response = await fetch(API_URL, {
