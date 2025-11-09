@@ -1,0 +1,17 @@
+{
+  "name": "rpnpc-survey-app",
+  "version": "0.1.0",
+  "description": "Simple survey API",
+  "main": "server/index.js",
+  "scripts": {
+    "start": "node server/index.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
+  }
+}
