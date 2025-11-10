@@ -1,4 +1,4 @@
-{
+bash -lc "end=$((SECONDS+120)); echo 'Polling GitHub Actions for up to 120s (checks every 5s)...'; while [ $SECONDS -lt $end ]; do n=$(gh run list --repo Sarurutona/rpnpc-survey-app --limit 6 --json status --jq 'map(.status) | map(select(.=="in_progress")) | length'); echo "in_progress=$n"; gh run list --repo Sarurutona/rpnpc-survey-app --limit 6 --json databaseId,displayTitle,conclusion,createdAt,status,url --jq '.[0:6] | sort_by(.createdAt) | reverse' ; if [ "$n" -eq 0 ]; then break; fi; sleep 5; done; echo 'Final run list:'; gh run list --repo Sarurutona/rpnpc-survey-app --limit 8 --json databaseId,displayTitle,conclusion,createdAt,status,url --jq '.[0:8] | sort_by(.createdAt) | reverse'"{
   "name": "rpnpc-survey-frontend",
   "type": "module",
   "version": "0.0.0",
