@@ -7,13 +7,22 @@ bash -lc "end=$((SECONDS+120)); echo 'Polling GitHub Actions for up to 120s (che
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "vite": "^5.0.0",
-    "@vitejs/plugin-react": "^5.0.0"
+  {
+    "name": "rpnpc-survey-frontend",
+    "type": "module",
+    "version": "0.0.0",
+    "private": true,
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "preview": "vite preview"
+    },
+    "dependencies": {
+      "react": "^18.2.0",
+      "react-dom": "^18.2.0"
+    },
+    "devDependencies": {
+      "vite": "^5.0.0",
+      "@vitejs/plugin-react": "^5.0.0"
+    }
   }
-}
